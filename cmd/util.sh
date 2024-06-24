@@ -23,3 +23,29 @@ check_args() {
         exit 1
     fi
 }
+
+
+# 定义run_container函数
+run_container() {
+    # 接受两个参数
+    local num=$1
+    local image=$2
+
+    # 如果image为空，则赋值为redroid10
+    if [ -z "$image" ]; then
+        image="rd_arm10"
+    fi
+
+ docker stop redroid10arm_$num
+ docker rm redroid10arm_$num
+ 
+    run_cmd docker run -itd  --privileged --name redroid10arm_$num \
+    -v /userdata/snow/redroid_data/rd_$num/:/data \
+    -p 110"$num":5555 \
+    $image \
+    androidboot.redroid_width=1080 \
+    androidboot.redroid_height=1920 \
+    androidboot.redroid_dpi=480 \
+    androidboot.redroid_gpu_mode=guest \
+
+}

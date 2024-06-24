@@ -26,14 +26,15 @@ run_cmd umount vendor
 run_cmd rm -rf $cur_path/system $cur_path/vendor
 
 
-run_cmd docker stop redroid10arm_$num
-run_cmd docker rm redroid10arm_$num
+run_container $num $image_name
+#  docker stop redroid10arm_$num
+#  docker rm redroid10arm_$num
 
-run_cmd docker run -itd  --privileged --name redroid10arm_$num \
-    -v /userdata/snow/redroid_data/rd_$num/:/data \
-    -p 110"$num":5555 \
-    $image_name \
-    androidboot.redroid_width=1080 \
-    androidboot.redroid_height=1920 \
-    androidboot.redroid_dpi=480 \
-    androidboot.redroid_gpu_mode=guest \
+# run_cmd docker run -itd  --privileged --name redroid10arm_$num \
+#     -v /userdata/snow/redroid_data/rd_$num/:/data \
+#     -p 110"$num":5555 \
+#     $image_name \
+#     androidboot.redroid_width=1080 \
+#     androidboot.redroid_height=1920 \
+#     androidboot.redroid_dpi=480 \
+#     androidboot.redroid_gpu_mode=guest \

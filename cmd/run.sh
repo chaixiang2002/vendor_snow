@@ -28,6 +28,11 @@ run_cmd scp -r IMAGES/$image_tag root@$ip:/userdata/snow/
 run_cmd scp -r vendor_snow/cmd/util.sh root@$ip:/userdata/snow/cmd/
 run_cmd ssh root@$ip /userdata/snow/$image_tag/build_snow.sh           $msg $num $timee
 
+#删除
+
+run_cmd ssh root@$ip rm -rf /userdata/snow/rd*
+
+
 # # 打包
 # cd out/target/product/redroid_arm64/ 
 # mount system.img system -o ro                                                                       #挂载system 
