@@ -25,7 +25,7 @@ run_cmd cp out/target/product/redroid_arm64/vendor.img      IMAGES/$image_tag/
 run_cmd cp vendor_snow/cmd/build_snow.sh                    IMAGES/$image_tag/
 run_cmd cp vendor_snow/cmd/util.sh                          IMAGES/$image_tag/
 run_cmd scp -r IMAGES/$image_tag root@$ip:/userdata/snow/
-run_cmd scp -r vendor_snow/cmd/util.sh root@$ip:/userdata/snow/cmd/
+run_cmd scp -r vendor_snow/cmd/util.sh root@$ip:/userdata/snow/snow-env/
 run_cmd ssh root@$ip /userdata/snow/$image_tag/build_snow.sh           $msg $num $timee
 
 #删除

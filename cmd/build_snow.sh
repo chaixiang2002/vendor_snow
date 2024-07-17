@@ -1,5 +1,5 @@
 # 引入 functions.sh 中定义的函数
-source /userdata/snow/cmd/util.sh
+source /userdata/snow/snow-env/util.sh
 check_args "$1" "$2" "$3"
 
 msg=$1
