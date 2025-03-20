@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Space9dService</string>
+    <string name="virtual_keyboard">VirtualInputMethod</string>
+</resources>

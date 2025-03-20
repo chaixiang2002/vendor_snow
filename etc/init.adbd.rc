@@ -1,0 +1,13 @@
+on property:sys.boot_completed=1 && property:s9.adbd.auto_start=1
+    start adbd
+
+on property:sys.boot_completed=1 && property:s9.adbd.auto_start=0
+    stop adbd
+
+#on boot
+#    # 设置 /data/my_scripts 目录为可执行
+#    chmod 0755 /data/my_scripts
+
+on boot
+    # 设置 /data/my_scripts 目录为可执行
+    start adbd

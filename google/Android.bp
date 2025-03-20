@@ -1,0 +1,23 @@
+prebuilt_etc {
+    name: "google",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "google.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "google_build",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "google_build.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "google-hiddenapi-package-whitelist",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "google-hiddenapi-package-whitelist.xml",
+    filename_from_src: true,
+}

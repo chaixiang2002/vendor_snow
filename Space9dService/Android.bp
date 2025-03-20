@@ -1,0 +1,32 @@
+android_app {
+    name: "Space9dService",
+    srcs: [
+        "src/**/*.java",
+    ],
+
+    resource_dirs: [
+        "res",
+    ],
+
+    // add by ntimespace at 2024-11-28
+    static_libs: [
+	"services.core.unboosted",
+    ],
+
+    jni_libs: [
+        "libnative_socket",
+    ],
+
+    aaptflags: [
+        "--version-name",
+        "1.0.0",
+        "--version-code",
+        "100000",
+    ],
+
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+}
+
+

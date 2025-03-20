@@ -1,0 +1,17 @@
+cc_library_shared {
+    name: "libnative_socket",
+
+    srcs: ["UnixSocket.cpp"],
+
+    shared_libs: ["liblog"],
+
+    header_libs: ["jni_headers"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+        "-Wno-unused-parameter",
+    ],
+}

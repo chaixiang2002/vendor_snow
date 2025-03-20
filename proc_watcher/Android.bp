@@ -1,0 +1,22 @@
+cc_library_shared {
+    name: "libandroidpw",
+    srcs: [
+        "AppWatcher.cpp",
+        "SocketConnection.cpp",
+        "BuildModifier.cpp",
+        "GrantRoot.cpp",
+    ],
+
+    header_libs: ["jni_headers"],
+
+    shared_libs: ["libcutils", "liblog"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wno-unused-variable",
+        "-Wno-unused-parameter",
+        "-Wunreachable-code",
+    ],
+}
