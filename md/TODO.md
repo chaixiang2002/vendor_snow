@@ -1,17 +1,21 @@
 Tips：
     1. 查看我的提交                 repo forall -p -c 'git log --grep="SNOW::"'
-    2. 查看但前改动的文件            repo forall -c 'git diff --name-only | sed "s|^|$PWD/|"'
+    2. 查看当前改动的文件            repo forall -c 'git status --porcelain | awk -v pwd="$PWD" '\''{ $2=pwd"/"$2; print }'\'
+    3. diff所有修改                repo forall -p -c 'git diff; git ls-files -o --exclude-standard | xargs -r -I {} git diff --no-index /dev/null {}'
+    4. mgrep 'name: "su"'         mgrep 'LOCAL_MODULE := su'
     
 
 TODO：
-    0001 adb自启动和adb跳过授权【-】
+    0001 adb自启动和adb跳过授权【ok】
+    0002 获取root 【-】
 
 Rule：
     1. 所有更新 都要在修改范围添加      SNOW 任务号-任务简述 start/end
     2. 所有提交 遵循格式              SNOW::任务号::子模块名 feat/fix(模块):简述,动词开头
 
 
-
+comment：
+    1. strace集成
 
 
 
