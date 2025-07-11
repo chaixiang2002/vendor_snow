@@ -8,8 +8,8 @@ Tips：
 TODO：
     0001 adb自启动和adb跳过授权【ok】
     0002 获取root 【ok】
-    0003 logcat日志存储 【-】
-    0004 openGApp 
+    0003 logcat日志存储 【ok】
+    0004 openGApp 【-】
 
 Rule：
     1. 所有更新 都要在修改范围添加      SNOW 任务号-任务简述 start/end
