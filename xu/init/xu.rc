@@ -1,0 +1,5 @@
+service xu_daemon /system/bin/xu_daemon
+    class main
+    user root
+    group root
+    oneshot

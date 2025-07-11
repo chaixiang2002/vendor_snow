@@ -1,0 +1,42 @@
+aidl_interface {
+    name: "xu_interface",
+    local_include_dir: "src/common",
+    srcs: [
+        "src/common/com/xu/service/IXu.aidl",
+        "src/common/com/xu/service/CommandResult.aidl",
+    ],
+    unstable: true,
+    backend: {
+        cpp: {
+            enabled: true,
+        },
+    },
+}
+
+cc_binary {
+    name: "xu_daemon",
+    srcs: ["src/daemon/xu_daemon.cpp"],
+    shared_libs: [
+        "libutils",
+        "libbinder",
+        "libcutils",
+        "liblog",
+        "libselinux",
+        "libbase",
+        "xu_interface-cpp",
+    ],
+    init_rc: ["init/xu.rc"],
+}
+
+cc_binary {
+    name: "vu",
+    srcs: ["src/client/xu.cpp"],
+    shared_libs: [
+        "libutils",
+        "libbinder",
+        "libcutils",
+        "liblog",
+        "libbase",
+        "xu_interface-cpp",
+    ],
+}
